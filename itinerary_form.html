@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itineraries</title>
+    <style>
+        html, body {
+            width: 99.2%;
+            height: 98.8%;
+        }
+        
+        body{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: 3px  salmon  dashed;
+        }
+        button{
+            background-color: black;
+            color:salmon;
+         
+        }
+        button:hover{
+            background-color: salmon;
+            transform: scale(1.1);
+            color:white;
+        }
+        a{
+      
+            color:salmon;
+        }
+        a:hover{
+  
+            color:white;
+        }
+        footer{
+            position:absolute;
+            bottom:25px;
+            width:100%;
+            height: 1.5rem;
+            text-align: center;
+            font-size: 18px;
+            
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 50% 50% ;
+            
+        }
+
+        #grid2{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body style="background-color: white; ">
+    <div id="grid">
+    <div style="border: 2px solid salmon; background: linear-gradient( white, salmon,salmon,white); padding: 20px;  float: left; margin:10px; overflow: hidden;">
+        <form action="">
+            <h1 style="text-align: center;">Just getting started? Fill out this form!</h1>
+            <div>
+                <label for="people">How many people will be attending?</label>
+                <input type="number" name="" id="people" placeholder="2">
+            </div>
+            <div>
+                <p>What kind of vacation are you looking for?</p>
+            
+                <input type="radio" name="vacation" id="fam" value="Family Vacation">
+                <label for="fam">Family Vacation</label><br>
+                <input type="radio" name="vacation" id="wkd" value="Weekend">
+                <label for="wkd">Weekend Getaway</label><br>
+                <input type="radio" name="vacation" id="hnymn" value="Honeymoon">
+                <label for="hnymn">Honeymoon</label><br>
+                <input type="radio" name="vacation" id="out" value="Outdoors">
+                <label for="out">Outdoors</label><br>
+            </div>
+            <div>
+                <br><label for="date">When do you want to leave?</label> 
+                <input type="date" name="" id="date">
+            </div>
+            <div>
+                <br><label for="days">For about how many days?</label>
+                <input type="number" id="days" placeholder="5">
+            </div>
+            <div>
+                <br><input type="submit" name="" id="">
+            </div>
+        </form>
+    </div>
+    
+
+    <div style="grid-row: 1 /2/ 3/3; ">
+        <h1 style="text-align: center; color:black; text-shadow: 2px 2px 0px salmon;">Or choose an available itinerary here:</h1>
+        <h5 style="text-align: center; color:black; ">*NOTE* This part of the project will be available once the back-end portion is complete.</h5>
+     
+        <p style="text-align: center;">
+        Romantic couple's getaway in France <br>
+        USA Outdoors Roadtrip <br>
+        Disney Cruise <br>
+        Bahamas Honeymoon <br>
+        African Safari <br>
+        All-inclusive Resort in Mexico <br>
+        Greek island hopping <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+        </p>
+
+    </div>
+    <div style="border: 2px solid salmon; background: linear-gradient( white, salmon,salmon,white); padding: 20px ; height: auto;margin:10px; text-align: center; ">
+        <h1 style="text-align: center;">Already know where you want to go?</h1>
+        <script type="text/javascript" src="form.js"></script>
+
+        <form action="">
+        <label for="continent">Which continent?</label>
+        <select name="continent" id="continent" onchange="selectCountry()">
+            
+            <option value="">--Please select a continent--</option>
+            <option value="africa">Africa</option>
+            <option value="antartica">Antartica</option>
+            <option value="asia">Asia</option>
+            <option value="australia">Australia</option>
+            <option value="europe">Europe</option>
+            <option value="northamerica">North America</option>
+            <option value="southamerica">South America</option>
+        </select>
+        <br><br><label for="country">Which country?</label>
+        <select name="country" id="country"    >
+           
+        </select><br><br>
+        <div style="text-align: right;">
+        <button type="submit">Get a free itinerary!</button>
+        </div>
+    </form>   
+    </div>
+
+
+    </div>
+    <footer id="grid2">
+        <div>
+        Not what you're looking for? Visit the homepage here:
+        <button><a href="index.html">Home</a></button> 
+        Or check out the map here: <button><a href="map.html">Map</a></button>
+        </div>
+       <div style="float: right; background-color: salmon;  border: 2px black dashed; text-align: center; width: max-content; ">
+            <form action="#" name="form1" id="form1" style="padding: 2px;" >
+                
+                <label for="select" style="font-size: 20px; font-weight: bold;">Choose a country to explore!</label>
+                <select name="select" id="option" class="option" >
+                    <option value="NorthAmerica.html" id="NA">North America</option>
+                    <option value="SouthAmerica.html" id="SA">South America</option>
+                    <option value="Africa.html" id="AF">Africa</option>
+                    <option value="Antartica.html" id="AN">Antartica</option>
+                    <option value="Asia.html" id="AS">Asia</option>
+                    <option value="Australia.html" id="AU">Australia</option>
+                    <option value="Europe.html" id="EU">Europe</option>
+                </select>
+                  
+                <input type="submit" name="sub" id="but">
+                
+            </form>
+            <script type="text/javascript" src="form.js"></script>
+            
+        </div>
+
+    </footer>
+
+    
+
+</body>
+</html>
