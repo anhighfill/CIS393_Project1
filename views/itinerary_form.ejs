@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itineraries</title>
+    <style>
+        html, body {
+            width: 99.2%;
+            height: 94.8%;
+        }
+        
+        body{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: 3px  salmon  dashed;
+        }
+        button{
+            width: 90%;
+            background-color: white;
+   
+            border-radius: 10px;
+            padding: 5px;
+            outline: 1px solid black;
+        }
+        
+        button:hover{
+            background-color: salmon;
+            color: white;
+            border: 1px solid white;
+            transform: scale(1.1); 
+        }
+        a{
+      
+            color:salmon;
+        }
+        a:hover{
+  
+            color:white;
+        }
+        footer{
+        position:absolute;
+        bottom:3px;
+        width:97%;
+        text-align: center;
+        font-size: 18px;
+        background-color: salmon;
+    
+}
+        #grid {
+            display: grid;
+            grid-template-columns: 50% 50% ;
+            align-items: center;
+            
+        }
+
+        #grid2{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            background-color: black;
+            /* background: linear-gradient(to bottom right, white, salmon,white); */
+            color: black;
+            text-align:center;
+            border: 3px black solid;
+            padding: 3px;
+            justify-content: space-between ;
+        }
+        #button{
+            background-color: black;
+            color: white;
+            width: auto;
+            align-items: center;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body style="background-color: white; ">
+    <div id="grid">
+    <div style="border: 2px solid salmon; background: linear-gradient( white, salmon,salmon,white); padding: 20px;  float: left; margin:10px; overflow: hidden;">
+        <form action="/form1" method="POST">
+            <h1 style="text-align: center;">Just getting started? Fill out this form!</h1>
+            <div>
+                <label for="people">How many people will be attending?</label>
+                <input type="number" name="people" id="people" placeholder="2">
+            </div>
+            <div>
+                <p>What kind of vacation are you looking for?</p>
+            
+                <input type="radio" name="category" id="fam" value="Family Vacation">
+                <label for="fam">Family Vacation</label><br>
+                <input type="radio" name="category" id="wkd" value="Weekend Getaway">
+                <label for="wkd">Weekend Getaway</label><br>
+                <input type="radio" name="category" id="rom" value="Romantic">
+                <label for="rom">Romantic</label><br>
+                <input type="radio" name="category" id="out" value="Outdoors">
+                <label for="out">Outdoors</label><br>
+            </div>
+            <div>
+                <br><label for="days">For about how many days?</label>
+                <input type="number" name="days" id="days" placeholder="5">
+            </div>
+            <div>
+                <br><input type="submit" name="" id="">
+            </div>
+        </form>
+    </div>
+    
+
+    <div style="grid-row: 1 /2/ 3/3; ">
+        <h1 style="text-align: center; color:black; text-shadow: 2px 2px 0px salmon;"> Check out the available vacations here:</h1>
+     
+        <p style="text-align: center;">
+        Romantic couple's getaway in France <br>
+        USA Outdoors Roadtrip <br>
+        Disney Cruise <br>
+        Bahamas Honeymoon <br>
+        African Safari <br>
+        All-inclusive Resort in Mexico <br>
+        Greek island hopping <br>
+        Historical Italy Tour <br>
+        A week in Tokyo <br>
+        Weekend in Hollywood <br>
+        Canada glacial lakes trip <br>
+        Big Ben experience <br>
+        Waterfall jumping in the Philippines <br>
+        And <a href="/map">more!</a> 
+        <br>
+        <br>
+        <br>
+        <br>
+       
+        </p>
+
+    </div>
+    <div style="border: 2px solid salmon; background: linear-gradient( white, salmon,salmon,white); padding: 20px ; height: auto;margin:10px; text-align: center; ">
+        <h1 style="text-align: center;">Already know where you want to go?</h1>
+        <script type="text/javascript" src="form.js"></script>
+
+        <form action="/form2" method="POST">
+        <label for="continent">Which continent?</label>
+        <select name="continent" id="continent" onchange="selectCountry()">
+            
+            <option value="">--Please select a continent--</option>
+            <option value="africa">Africa</option>
+            <option value="antartica">Antartica</option>
+            <option value="asia">Asia</option>
+            <option value="australia">Australia</option>
+            <option value="europe">Europe</option>
+            <option value="northamerica">North America</option>
+            <option value="southamerica">South America</option>
+        </select>
+        <br><br><label for="country">Which country?</label>
+        <select name="country" id="country"    >
+           
+        </select>
+        <div>
+            <br><label for="date">When do you want to go?</label> 
+            <select name="month" id="month" >
+            
+                <option value="">--Please select a month--</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+        <br><br>
+        <div style="text-align: right;">
+        <button id="button" type="submit">Get a free itinerary!</button>
+        </div>
+    </form>   
+    </div>
+
+    <div style= "border: 2px solid salmon; background: linear-gradient( white, salmon,salmon,white); padding: 20px ; height: auto;margin:10px; text-align: center; width: 90%; ">
+        <h2>Already made an itinerary? Enter username to access it!</h2>
+        <form action="/custom2" method="POST" >
+            <label for="username">Please enter your username:</label>
+            <input type="text" name="username" id="username">
+            <input type="submit" name="" id="" value="Login">
+        </form>
+        <h2>Forgot your username?</h2>
+        <form action="/username" method="POST" >
+            <label for="email">Please enter your email:</label>
+            <input type="email" name="email" id="email">
+            <input type="submit" name="" id="" value="Search">
+        </form>
+    </div>
+    </div>
+
+    
+    
+    <footer id="grid2">
+        
+        
+            <form action="/map" method="GET">
+            <div >
+                <button >Map</button>
+            </div> 
+            </form>
+            <form action="/index" method="GET">
+            <div>
+                <a href="index.html"><button >Homepage</button></a>
+            </div>
+            </form>
+            <form action="/Learn" method="GET">
+            <div>
+                <a href="learn.html"><button >Learn more</button></a>
+            </div>
+            </form>
+    
+
+    </footer>
+    
+
+    
+
+</body>
+</html>

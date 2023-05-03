@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: 2px solid;
+            background-color: black;
+            color:white;
+            font-size: 27px;
+            text-align: center;
+        }
+        h1, h3{
+            text-align: center;
+            background-color: salmon;
+            color:white;
+        }
+        h2{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Here is your custom-made itinerary list to refer back to!</h1>
+    <h2> For user: 
+        <% 
+  var previousUsername = null;
+  data.forEach(function(custom_itinerary){
+    if (custom_itinerary.username !== previousUsername) {
+      previousUsername = custom_itinerary.username;
+      %><%= custom_itinerary.username %><%
+    }
+  });
+%>
+
+    </h2>
+
+    <table style="width:100%">
+        <tr style='text-align:left; background-color:rgb(231, 226, 237)'>
+        <th>Country</th>
+        <th>Departure date</th>
+        <th>Return date</th>
+        <th>Budget</th>
+        <th>People</th>
+        <th>Form number</th>
+        
+        </tr>
+        
+        <% data.forEach(function(custom_itinerary){ %>
+        <tr>
+        <td><%= custom_itinerary.country %></td>
+        <td><%= custom_itinerary.depart_date%></td>
+        <td><%=custom_itinerary.return_date%></td>
+        <td><%=custom_itinerary.budget%></td>
+        <td><%=custom_itinerary.people%></td>
+        <td><%=custom_itinerary.form_no%></td>
+        </tr>
+        <% }); %>
+
+    </table>
+
+    <div style="width: 100%; position: absolute; bottom: 10px">
+    <h3 >Want to delete a saved itinerary?</h3>
+    <form action="/delete" method="POST" style="text-align: center;">
+        <label for="username">Please enter your username:</label>
+        <input type="text" name="username" id="username">
+        <label for="form_no">Enter form number here:</label>
+        <input type="number" name="form_no" id="form_no">
+        <input type="submit" name="" id="" value="Delete">
+    </form>
+    </div>
+
+   
+</body>
+</html>

@@ -1,4 +1,7 @@
-This site is a way for users to explore countries on each continent that have available sample itineraries. 
-Itineraries will be constructed with data inputted in the database.
-There will be a table displaying the most popular places by month from data inputted in the database.
-There will be an option to chooose the location of users' travels or to random receive an itinerary based on form choices.
+In this project, you can do the following:
+
+You can insert into the getting_started_form table, insert into the subscribers table, insert into the destination_in_mind table, insert into the custom itinerary table
+You can update the custom_itinerary table
+You can search for your username in the subscribers table
+You can delete from the custom_itinerary table, delete from the subscribers table
+You can display the custom_itinerary table, you can display the destination_in_mind table through a ranking function by month

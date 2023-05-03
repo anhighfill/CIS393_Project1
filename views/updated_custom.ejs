@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+             table, th, td{
+            border: 2px solid;
+            
+            color:white;
+            
+            text-align: center;
+
+    
+        }
+        td{
+            font-size:24px;
+        }
+        th{
+            font-size: 27px;
+            background-color: black;
+        }
+        h1, h3{
+            text-align: center;
+            background-color: salmon;
+            color:white;
+        }
+        h2{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(180, 155, 155, 0.611);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(154, 126, 126);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Here is your custom-made itinerary list to refer back to!</h1>
+    <h2> For user: 
+        <% 
+  var previousUsername = null;
+  data.forEach(function(custom_itinerary){
+    if (custom_itinerary.username !== previousUsername) {
+      previousUsername = custom_itinerary.username;
+      %><%= custom_itinerary.username %><%
+    }
+  });
+%>
+
+    </h2>
+
+    <table style="width: 100%;">
+        <tr >
+        <th>Country</th>
+        <th>Departure date</th>
+        <th>Return date</th>
+        <th>Budget</th>
+        <th>People</th>
+        <th>Form number</th>
+        
+        </tr>
+        
+        <% data.forEach(function(custom){ %>
+        <tr>
+        <td><%= custom.country %></td>
+        <td><%= custom.depart_date%></td>
+        <td><%=custom.return_date%></td>
+        <td><%=custom.budget%></td>
+        <td><%=custom.people%></td>
+        <td><%=custom.form_no%></td>
+        </tr>
+        <% }); %>
+
+    </table>
+
+    <div style="width: 100%;">
+        <h3>Want to update a saved itinerary?</h3>
+        <form action="/update" method="POST" style="text-align: center";>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <label for="form_no">Form number:</label>
+            <input type="number" name="form_no" id="form_no"><br><br>
+
+            <label for="country">Country:</label>
+            <input style="width:200px" type="text" name="country" id="country" placeholder="Enter updated country here"><br><br>
+            <label for="people">People:</label>
+            <input style="width:200px" type="number" name="people" id="people" placeholder="Enter updated people here"><br><br>
+            <label for="budget">Budget:</label>
+            <input style="width:200px" type="number" name="budget" id="budget" placeholder="Enter updated budget here">
+            <br><br>
+            <label for="depart_date">Departure date?</label>
+            <input style="width:210px" type="date" name="depart_date" id="depart_date" placeholder="Enter updated departure date here"><br><br>
+            <label for="return_date">Return date?</label>
+            <input style="width:200px" type="date" name="return_date" id="return_date" placeholder="Enter updated return date here"><br><br>
+            <input type="submit" name="" id="" value="Update">
+        </form>
+        
+        </div>
+
+    <div style="width: 100%; ">
+    <h3>Want to delete a saved itinerary?</h3>
+    <form action="/delete" method="POST" style="text-align: center";>
+        <label for="username">Please enter your username:</label>
+        <input type="text" name="username" id="username">
+        <label for="form_no">Enter form number here:</label>
+        <input type="number" name="form_no" id="form_no">
+        <input type="submit" name="" id="" value="Delete">
+    </form>
+    <a href="/index"><button style="background-color: salmon;">Home</button></a>
+    </div>
+</body>
+</html>

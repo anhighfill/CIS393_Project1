@@ -1,0 +1,25 @@
+{
+  "name": "cis445-project",
+  "version": "1.0.0",
+  "description": "This site is a way for users to explore countries on each continent that have available sample itineraries.  Itineraries will be constructed with data inputted in the database. There will be a table displaying the most popular places by month from data inputted in the database. There will be an option to chooose the location of users' travels or to random receive an itinerary based on form choices.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhighfill/CIS393_Project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anhighfill/CIS393_Project1/issues"
+  },
+  "homepage": "https://github.com/anhighfill/CIS393_Project1#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}

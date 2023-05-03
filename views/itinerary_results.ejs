@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+              table, th, td{
+            border: 2px solid;
+            
+            color:white;
+            
+            text-align: center;
+
+    
+        }
+        td{
+            font-size:24px;
+        }
+        th{
+            font-size: 27px;
+            background-color: black;
+        }
+        h1, h3{
+            text-align: center;
+            background-color: salmon;
+            color:white;
+        }
+        h2{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(180, 155, 155, 0.611);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(154, 126, 126);
+        }
+    </style>
+</head>
+<body>
+    
+    <table style="width:100%">
+        <tr >
+        <th>Days</th>
+        <th>Approximate price</th>
+        <th>People</th>
+        <th>Type</th>
+        <th>Country</th>
+        </tr>
+        
+        <% data.forEach(function(Itineraries){ %>
+        <tr>
+        <td><%= Itineraries.days %></td>
+        <td><%= Itineraries.approx_price %></td>
+        <td><%=Itineraries.people%></td>
+        <td><%=Itineraries.vaca_type%></td>
+        <td><%=Itineraries.country%></td>
+        </tr>
+        <% }); %>
+    
+    
+    
+        
+        </table>
+
+        <h3 style="text-align: center;">Like what you see? Begin making your detailed itinerary here!</h3><hr>
+
+        <div style="width: 100%; text-align: center;">
+        <form action="/custom" method="POST";>
+            <label for="username">Please enter your username:</label>
+            <input type="text" name="username" id="username"><br><br>
+            <label for="continent">Which country sounds most appealing?</label>
+            <select name="country" id="country">
+                <option value="Bahamas">Bahamas</option>
+                <option value="Canada">Canada</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Panama">Panama</option>
+                <option value="United States of America">United States of America</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Columbia">Columbia</option>
+                <option value="Ecuador">Ecuador and the Galapagos</option>
+                <option value="Peru">Peru</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Morocco">Morocco</option>
+                <option value="South Africa">South Africa</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="China">Columbia</option>
+                <option value="Japan">Japan</option>
+                <option value="The Philippines">The Philippines</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Australia">Australia</option>
+                <option value="Papua New Guinea">Papua New Guinea</option>
+                <option value="New Zealand">New Zealand</option>
+            </select><br><br>
+            <label for="depart_date">What day do you plan on leaving?</label>
+            <input type="date" name="depart_date" id="depart_date"><br><br>
+            <label for="return_date">And returning what day?</label>
+            <input type="date" name="return_date" id="return_date"><br><br>
+            <label for="budget">What is your budget?</label>
+            <input type="number" name="budget" id="budget"><br><br>
+            <label for="people">How many people are coming?</label>
+            <input type="number" name="people" id="people"><br><br>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+
+    <div style="width: 100%; background-color: salmon; border: dashed black 1px; width: max-content; padding: 5px;">
+        <p>Already made an itinerary? Enter username to access it!</p>
+        <form action="/custom2" method="POST" >
+            <label for="username">Please enter your username:</label>
+            <input type="text" name="username" id="username">
+            <input type="submit" name="" id="" value="Login">
+        </form>
+        
+
+    </div>
+    <a href="/index"><button style="background-color: salmon; position: absolute; bottom:50px">Home</button></a>
+
+
+</body>
+</html>
+
