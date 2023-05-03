@@ -1,8 +1,7 @@
 In this project, you can do the following:
 
-You can insert into the getting_started_form table, insert into the subscribers table, insert into the destination_in_mind table, insert into the custom itinerary table.
-
-You can update the custom_itinerary table.
-You can search for your username in the subscribers table.
+You can insert into the getting_started_form table, insert into the subscribers table, insert into the destination_in_mind table, insert into the custom itinerary table.You can update the custom_itinerary table.You can search for your username in the subscribers table.
 You can delete from the custom_itinerary table, delete from the subscribers table.
 You can display the custom_itinerary table, you can display the destination_in_mind table through a ranking function by month.
+
+index.ejs is the home and starting page. From there, the user can choose to go to the map, itineraries, or learn page. The map page has links to each continent showing which countries are available to choose from. The itineraries page has a few forms the user can use. Two of them will display tables giving suggestions to the user for destinations based on their intentions. From there they can see their own itineraries, update them, delete them, or make new ones. If the user already has a username associated with itinerary records, they can enter their username and their prior itineraries will display. If the user forgets their username, they can input their email, and if they have a username associated with the email and the database, it will tell them. The learn page shows the most popular countries each month by keeping data from the "Already know where you want to go?" form database. Users can also choose to subscribe or unsubscribe on the learn page. Subscribe is insertion and unsubscribe is deletion.
